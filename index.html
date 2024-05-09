@@ -1,88 +1,146 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Humans of CMP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="icon" type="image/x-icon" href="/images/favicon.png">
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Password Protected</title>
 
-		<!-- Header -->
-			<header id="header">
-				<div class="inner">
-					<h1><strong>Humans of CMP</strong></h1>
-					<h3>A collection of portraits and stories from our community at the <a href="https://www.stmarkstpeter.org" target="_blank">Church of St Mark and St Peter</a>.</h3>
-					
-				</div>
-			</header>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="noindex, nofollow">
 
-		<!-- Main -->
-			<div id="main">
+        <style>
+            *,
+            *:after,
+            *:before {
+                box-sizing: border-box;
+            }
+            body,
+            html {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+                font-weight: 300;
+                font-size: 16px;
+                background: #f2f2f2;
+                color: #2D3737;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-height: 100%;
+            }
 
-					<section id="two">
-						<div class="row">
-							<article class="col-6 col-12-xsmall">
+            .protected {
+                background: #fff;
+                -webkit-box-shadow: 0 2px 3px 0 rgba(0,0,0,0.1);
+                box-shadow: 0 2px 3px 0 rgba(0,0,0,0.1);
+                border-radius: 3px;
+                min-width: 500px;
 
-								<div class="work-item">
-									<a href="https://scontent.fymq2-1.fna.fbcdn.net/v/t39.30808-6/280182575_533566884924055_5761502940178873919_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=3635dc&_nc_ohc=zGOFVezUSNgAX8hlt78&_nc_ht=scontent.fymq2-1.fna&oh=00_AfCaxl6yXHHgma7VHjDXtX_hYPq2NIFS_g8r4FranLInow&oe=65D96EFE" class="image fit thumb" oncontextmenu="return false;">
-										<img src="https://scontent.fymq2-1.fna.fbcdn.net/v/t39.30808-6/280182575_533566884924055_5761502940178873919_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=3635dc&_nc_ohc=zGOFVezUSNgAX8hlt78&_nc_ht=scontent.fymq2-1.fna&oh=00_AfCaxl6yXHHgma7VHjDXtX_hYPq2NIFS_g8r4FranLInow&oe=65D96EFE"/>
-									</a>
-									<h3>This is a placeholder image pulled from Facebook</h3>
-									<p>Here is some placeholder text about 200 words long: Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-								</div>
+            }
+            .protected__content {
+                padding: 24px 28px;
+            }
+            .protected__content__heading {
+                font-size: 16px;
+                font-weight: 500;
+                margin: 0 0 12px;
+                line-height: 1;
+            }
+            .protected__alert {
+                display: none;
+                border-bottom: 1px solid transparent;
+                border-radius: 3px 3px 0 0;
+                padding: 12px 14px;
+                color: #a94442;
+                background-color: #f2dede;
+                border-color: #ebccd1;
+            }
+            .protected__content__input {
+                display: block;
+                border: solid 1px #ccc;
+                padding: 12px 14px;
+                -webkit-box-shadow: 0 2px 3px 0 rgba(0,0,0,0.1);
+                box-shadow: 0 2px 3px 0 rgba(0,0,0,0.1);
+                font-size: 16px;
+                width: 100%;
+                border-radius: 3px;
 
-								<div class="work-item">
-									<a href="https://scontent.fymq2-1.fna.fbcdn.net/v/t1.6435-9/133292228_228837608730319_2266326442953964513_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=7f8c78&_nc_ohc=9A3VbW1NSEgAX-s7Nw-&_nc_ht=scontent.fymq2-1.fna&oh=00_AfBHktaBHT5JFKnIwOHYHjD6vGxgcuWX7j8pm2YrEjSGXQ&oe=65FC4EC2" class="image fit thumb">
-										<img src="https://scontent.fymq2-1.fna.fbcdn.net/v/t1.6435-9/133292228_228837608730319_2266326442953964513_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=7f8c78&_nc_ohc=9A3VbW1NSEgAX-s7Nw-&_nc_ht=scontent.fymq2-1.fna&oh=00_AfBHktaBHT5JFKnIwOHYHjD6vGxgcuWX7j8pm2YrEjSGXQ&oe=65FC4EC2"/>
-									</a>
-									<h3>This is another placeholder image pulled from Facebook</h3>
-									<p>This is some placeholder text about 75 words long: Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-								</div>
+                margin-bottom: 12px;
+            }
+            .protected__content__input:focus {
+                outline: none;
+                border-color: #228843;
+            }
+            .protected__content__btn {
+                background-color: #228843;
+                border-radius: 3px;
+                cursor: pointer;
+                border: none;
+                color: #fff;
+                padding: 12px 14px;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+                font-weight: 500;
+                font-size: 16px;
 
-							</article>
-							<article class="col-6 col-12-xsmall">
+            }
+            .protected__content__btn:hover {
+                background-color: #1C6D36;
+            }
 
-								<div class="work-item">
-									<a href="https://scontent.fymq2-1.fna.fbcdn.net/v/t39.30808-6/406589721_671514861837537_5673850345768093821_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=IZhx-1-Ra9EAX8iOdAs&_nc_ht=scontent.fymq2-1.fna&oh=00_AfAwnNa6eX6rDuqPT-_8xdlzEmudcVqOwD_pdZzpZ0Xwkg&oe=65DA45E5" class="image fit thumb">
-										<img src="https://scontent.fymq2-1.fna.fbcdn.net/v/t39.30808-6/406589721_671514861837537_5673850345768093821_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=IZhx-1-Ra9EAX8iOdAs&_nc_ht=scontent.fymq2-1.fna&oh=00_AfAwnNa6eX6rDuqPT-_8xdlzEmudcVqOwD_pdZzpZ0Xwkg&oe=65DA45E5"/>
-									</a>
-									<h3>This is another placeholder image pulled from Facebook</h3>
-									<p>This is some placeholder text about 75 words long: Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-								</div>
+        </style>
 
-								<div class="work-item">
-									<a href="https://scontent.fymq2-1.fna.fbcdn.net/v/t39.30808-6/405401569_671514925170864_8999088218752667244_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=4LYPMe8eCnkAX-a0yaJ&_nc_ht=scontent.fymq2-1.fna&oh=00_AfCgZVjL8y3sPasi05Ozgk4b5bZIhRQmp6tK9fR7FnGxJw&oe=65D94638" class="image fit thumb" oncontextmenu="return false;">
-										<img src="https://scontent.fymq2-1.fna.fbcdn.net/v/t39.30808-6/405401569_671514925170864_8999088218752667244_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=4LYPMe8eCnkAX-a0yaJ&_nc_ht=scontent.fymq2-1.fna&oh=00_AfCgZVjL8y3sPasi05Ozgk4b5bZIhRQmp6tK9fR7FnGxJw&oe=65D94638"/>
-									</a>
-									<h3>This is a placeholder image pulled from Facebook</h3>
-									<p>Here is some placeholder text about 200 words long: Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat. Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-								</div>
+    </head>
 
-							</article>
-						</div>
-					</section>
-			</div>
+    <body>
 
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="inner">
-					<ul class="copyright">
-						<li>&copy; Church of St Mark & St Peter</li>
-						<li>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a>
-						</li>
-					</ul>
-				</div>
-			</footer>
+        <div class="protected">
+            <div class="protected__alert" data-id="alert">You entered an incorrect password</div>
+            <div class="protected__content">
+                <h1 class="protected__content__heading">Enter the password</h1>
+                <input class="protected__content__input" data-id="password" type="password" placeholder="password"/>
+                <button data-id="button" type="button" class="protected__content__btn">Continue</button>
+            </div>
+        </div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/js-sha1/0.6.0/sha1.min.js"></script>
+        <script type="text/javascript">
+            "use strict"
+            var button = document.querySelectorAll('[data-id="button"]')
+            var password = document.querySelectorAll('[data-id="password"]')
 
-	</body>
+            function login(secret) {
+                var hash = sha1(secret)
+                var url = hash + "/index.html"
+                var alert = document.querySelectorAll('[data-id="alert"]')
+
+                var request = new XMLHttpRequest()
+                request.open('GET', url, true)
+
+                request.onload = function () {
+                    if (request.status >= 200 && request.status < 400) {
+                        window.location = url
+                    } else {
+                        parent.location.hash = hash
+                        alert[0].style.display = 'block'
+                        password[0].setAttribute('placeholder', 'Incorrect password')
+                        password[0].value = ''
+                    }
+                }
+                request.onerror = function () {
+                    parent.location.hash = hash
+                    alert[0].style.display = 'block'
+                    password[0].setAttribute('placeholder', 'Incorrect password')
+                    password[0].value = ''
+                }
+                request.send()
+            }
+
+            button[0].addEventListener("click", function () {
+                login(password[0].value)
+            })
+
+            document.onkeydown = function (e) {
+                e = e || window.event
+                if (e.keyCode == 13) {
+                    login(password[0].value)
+                }
+            }
+        </script>
+    </body>
 </html>
