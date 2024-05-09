@@ -2561,13 +2561,13 @@ input, select, textarea {
 			margin: 0 0 1.5em 0;
 		}
 
-		.work-item h3 {
+		/* .work-item h3 {
 			font-size: 1em;
 			margin: 0 0 0.5em 0;
-		}
+		} */
 
 		.work-item p {
-			font-size: 0.8em;
+			font-size: 0.9em;
 			line-height: 1.5em;
 			margin: 0;
 		}
@@ -2778,7 +2778,7 @@ input, select, textarea {
 		border-radius: 0em; /* original 0.35em */
 		box-shadow: 0 0.1em 0.15em 0 rgba(0, 0, 0, 0.15);
 		overflow: hidden;
-		padding-bottom: 3em;
+		/* padding-bottom: 10em; */
 	}
 
 		.poptrox-popup .loader {
@@ -2819,14 +2819,18 @@ input, select, textarea {
 			bottom: 0;
 			cursor: default;
 			font-size: 0.9em;
-			height: 3em;
+			height: 9em;
 			left: 0;
-			line-height: 2.8em;
+			line-height: 1.2em;
 			position: absolute;
-			text-align: center;
-			width: 100%;
+			overflow: scroll;
+			text-align: right;
+			padding: 1em;
 			z-index: 1;
+			align-items: center;     /* Vertically center the content */
+			justify-content: flex-end; /* Align text to the right */
 		}
+
 
 		.poptrox-popup .nav-next,
 		.poptrox-popup .nav-previous {
