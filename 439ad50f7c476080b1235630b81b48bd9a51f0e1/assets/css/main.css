@@ -2623,6 +2623,13 @@ input, select, textarea {
 			margin: 0 0 2em 0;
 		}
 
+			#header > .inner img {
+				width: 75%;
+				height: auto; 
+				-webkit-filter: drop-shadow(5px 5px 5px #222);
+  				filter: drop-shadow(5px 5px 5px #222);
+			}
+
 		#header strong, #header b {
 			color: #ffffff;
 		}
@@ -3019,6 +3026,7 @@ input, select, textarea {
 
 				#header > .inner {
 					margin-bottom: 0;
+					
 				}
 
 		/* Footer */
@@ -3081,6 +3089,13 @@ input, select, textarea {
 
 					#header h1 br {
 						display: inline;
+					}
+				
+					#header > .inner img {
+						width: 20%;
+						height: auto; 
+						-webkit-filter: drop-shadow(5px 5px 5px #222);
+						  filter: drop-shadow(5px 5px 5px #222);
 					}
 
 		/* Footer */
