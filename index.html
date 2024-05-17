@@ -4,6 +4,8 @@
     <title>Password Protected</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         *,
         *:after,
@@ -78,62 +80,99 @@
         .protected__content__btn:hover {
             background-color: #0052a3; /* Button hover state */
         }
+        .eye-toggle {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-85%);
+            cursor: pointer;
+        }
+        .input-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .input-container input {
+            width: 100%;
+            padding-right: 30px; /* Make space for the eye icon */
+        }
     </style>
 </head>
-    <body>
-        <div class="protected">
-            <div class="protected__alert" data-id="alert">Incorrect password, try again.</div>
-            <div class="protected__content">
-                <h1 class="protected__content__heading">This content is protected.</h1>
-                <p class="protected__content__text">To view, please enter the password.</p>
-                <input class="protected__content__input" data-id="password" type="password" placeholder="Enter password"/>
-                <button data-id="button" type="button" class="protected__content__btn">Continue</button>
+<body>
+    <div class="protected">
+        <div class="protected__alert" data-id="alert">Incorrect password, try again.</div>
+        <div class="protected__content">
+            <h1 class="protected__content__heading">This content is protected.</h1>
+            <p class="protected__content__text">To view, please enter the password.</p>
+            <div class="input-container">
+                <input class="protected__content__input" data-id="password" type="text" placeholder="Enter password"/>
+                <span class="eye-toggle" data-id="toggle"><i class="fas fa-eye"></i></span>
             </div>
+            <button data-id="button" type="button" class="protected__content__btn">Continue</button>
         </div>
+    </div>
 
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/js-sha1/0.6.0/sha1.min.js"></script>
-        <script type="text/javascript">
-            "use strict"
-            var button = document.querySelectorAll('[data-id="button"]')
-            var password = document.querySelectorAll('[data-id="password"]')
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/js-sha1/0.6.0/sha1.min.js"></script>
+    <script type="text/javascript">
+        "use strict"
+        var button = document.querySelectorAll('[data-id="button"]')
+        var password = document.querySelectorAll('[data-id="password"]')
 
-            function login(secret) {
-                var hash = sha1(secret)
-                var url = hash + "/index.html"
-                var alert = document.querySelectorAll('[data-id="alert"]')
+        function login(secret) {
+            var hash = sha1(secret)
+            var url = hash + "/index.html"
+            var alert = document.querySelectorAll('[data-id="alert"]')
 
-                var request = new XMLHttpRequest()
-                request.open('GET', url, true)
+            var request = new XMLHttpRequest()
+            request.open('GET', url, true)
 
-                request.onload = function () {
-                    if (request.status >= 200 && request.status < 400) {
-                        window.location = url
-                    } else {
-                        parent.location.hash = hash
-                        alert[0].style.display = 'block'
-                        password[0].setAttribute('placeholder', 'Password')
-                        password[0].value = ''
-                    }
-                }
-                request.onerror = function () {
+            request.onload = function () {
+                if (request.status >= 200 && request.status < 400) {
+                    window.location = url
+                } else {
                     parent.location.hash = hash
                     alert[0].style.display = 'block'
                     password[0].setAttribute('placeholder', 'Password')
                     password[0].value = ''
                 }
-                request.send()
             }
+            request.onerror = function () {
+                parent.location.hash = hash
+                alert[0].style.display = 'block'
+                password[0].setAttribute('placeholder', 'Password')
+                password[0].value = ''
+            }
+            request.send()
+        }
 
-            button[0].addEventListener("click", function () {
+        button[0].addEventListener("click", function () {
+            login(password[0].value)
+        })
+
+        document.onkeydown = function (e) {
+            e = e || window.event
+            if (e.keyCode == 13) {
                 login(password[0].value)
-            })
-
-            document.onkeydown = function (e) {
-                e = e || window.event
-                if (e.keyCode == 13) {
-                    login(password[0].value)
-                }
             }
-        </script>
-    </body>
+        }
+
+        // Toggle Password Visibility
+        document.addEventListener("DOMContentLoaded", () => {
+            const passwordInput = document.querySelector('[data-id="password"]');
+            const toggleButton = document.querySelector('[data-id="toggle"]');
+            const eyeOpen = 'fa-eye';
+            const eyeClosed = 'fa-eye-slash';
+
+            toggleButton.addEventListener('click', () => {
+                if (passwordInput.type === 'password') {
+                    passwordInput.type = 'text';
+                    toggleButton.innerHTML = `<i class="fas ${eyeClosed}"></i>`;
+                } else {
+                    passwordInput.type = 'password';
+                    toggleButton.innerHTML = `<i class="fas ${eyeOpen}"></i>`;
+                }
+            });
+        });
+    </script>
+</body>
 </html>
